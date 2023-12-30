@@ -10,13 +10,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 500px;
+  height: 400px;
   position: relative;
 }
 .container-Heading {
   position: relative;
   text-align: center;
-  padding-top: 8rem;
+  padding-top: 2rem;
 }
 .images {
   position: absolute;
@@ -44,7 +44,7 @@
   border-radius: 10px;
   position: absolute;
   left: 50%;
-  top: 80%;
+  top: 74%;
   transform: translate(-50%, -50%);
   margin-bottom: 30px;
 }
@@ -77,10 +77,46 @@ span {
   align-self: center;
   color: hsl(225, 20%, 60%);
 }
+
+.range-container {
+  position: relative;
+}
 .input__range {
   position: absolute;
-  left: 40%;
+  left: 10%;
   top: 30%;
+  -webkit-appearance: none;
+  width: 78%;
+  height: 10px;
+  border-radius: 5px;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  background: linear-gradient(
+    to right,
+    hsl(174, 86%, 45%) 0%,
+    hsl(174, 86%, 45%) 40%,
+    /* Adjust this percentage */ hsl(224, 65%, 95%) 40%,
+    hsl(224, 65%, 95%) 100%
+  );
+}
+.input__range::-webkit-slider-thumb {
+  background: url(/public/images/icon-slider.svg);
+  -webkit-appearance: none;
+  appearance: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-color: hsl(174, 86%, 45%);
+  cursor: pointer;
+  background-position: center center;
+  transition: background-color 0.3s;
+  box-shadow: 0px 10px 10px hsl(174, 77%, 80%);
+}
+.input__range:hover:focus {
+  opacity: 1;
 }
 .slider-content {
   position: relative;
@@ -160,15 +196,27 @@ section h1 {
 main {
   background-color: hsl(14, 92%, 95%);
   border-radius: 10px;
-  width: 20%;
-  height: 15px;
+  width: 18%;
+  height: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  gap: 0.2rem;
   padding: 1px;
-  text-align: center;
 }
 main h2 {
   font-size: 12px;
   text-align: center;
   color: hsl(15, 100%, 70%);
+}
+main small {
+  font-size: 13px;
+  text-align: center;
+  color: hsl(15, 100%, 70%);
+}
+.minus {
+  display: none;
 }
 .line {
   position: absolute;
@@ -211,4 +259,88 @@ footer {
 .image-check {
   width: 8px;
   height: 8px;
+}
+
+@media screen and (max-width: 1440px) {
+  .container-background {
+    top: 65%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container-background {
+    width: 64%;
+    height: 370px;
+    top: 90%;
+  }
+  .images {
+    top: 80%;
+  }
+  .section-position h1 {
+    margin-bottom: 0.5rem;
+  }
+}
+@media screen and (max-width: 425px) {
+  .section-position h1 {
+    font-size: 25px;
+  }
+  .section-position p {
+    font-size: 15px;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container-background {
+    width: 80%;
+    height: 500px;
+    top: 90%;
+  }
+  .contents {
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 5rem;
+  }
+
+  .input__range {
+    left: 10%;
+    top: 18%;
+    width: 82%;
+  }
+  .line {
+    top: 60%;
+  }
+  main {
+    width: 15%;
+  }
+  main h2 {
+    font-size: 12px;
+    text-align: center;
+    color: hsl(15, 100%, 70%);
+  }
+  main small {
+    display: none;
+  }
+  .discount-container {
+    margin-top: -4rem;
+  }
+  .minus {
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    color: hsl(15, 100%, 70%);
+  }
+  footer {
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+  }
+  .btn-trial {
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
 }
